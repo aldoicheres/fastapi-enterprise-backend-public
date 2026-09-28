@@ -1,5 +1,4 @@
-# FastAPI Enterprise Backend - Sistema de Gestión Operativa
-
+# FastAPI Enterprise Backend - Sistema de Gestión
 ## 📋 Descripción del Proyecto
 Este repositorio forma parte de mi portfolio profesional orientado a demostrar la transición y aplicación de sólidos patrones arquitectónicos empresariales desde el ecosistema .NET hacia tecnologías modernas en **Python**. 
 
