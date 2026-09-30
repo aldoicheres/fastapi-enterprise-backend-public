@@ -16,10 +16,12 @@ from app.security import (
     decodificar_access_token,
     ACCESS_TOKEN_EXPIRE_MINUTES,
 )
+from app.api.analytics import router as analytics_router
 
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Sistema de Gestión  API", version="1.0")
+app.include_router(analytics_router)
 
 # Esquema OAuth2 que apunta al endpoint de login para extraer el token Bearer
 
