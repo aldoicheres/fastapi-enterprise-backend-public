@@ -22,7 +22,13 @@ El proyecto implementa una **API RESTful robusta y escalable**, diseñada bajo e
 
 ## ⚙️ Instrucciones de Ejecución Local
 
+## 📊 Módulo Analítico y KPIs Corporativos (Business Intelligence)
+Con el objetivo de evolucionar la API transaccional hacia una solución orientada a la toma de decisiones, se ha integrado un módulo de Business Intelligence que permite:
+* **Consultas de Agregación en Tiempo Real:** Cálculo dinámico de indicadores clave de rendimiento (KPIs) mediante funciones nativas de SQLAlchemy (`func.count`, `func.avg`).
+* **Métricas Operativas:** Visualización consolidada del volumen de registros, promedios demográficos y estado del núcleo del sistema.
+* **Separación de Capas:** Aislamiento eficiente de los endpoints analíticos respecto a la lógica transaccional para evitar la degradación del rendimiento operativo.
+
 1. **Clonar el repositorio:**
    ```bash
-   git clone [https://github.com/tu-usuario/fastapi-enterprise-backend.git](https://github.com/tu-usuario/fastapi-enterprise-backend.git)
+   git clone [https://github.com/tu-usuario/fastapi-enterprise-backend-public.git](https://github.com/tu-usuario/fastapi-enterprise-backend-public.git)
    cd fastapi-enterprise-backend
