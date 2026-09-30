@@ -1,23 +1,21 @@
-# Usamos una imagen oficial y ligera de Python 3.9
+# Usar una imagen oficial y ligera de Python
 FROM python:3.9-slim
 
-# Directorio de trabajo dentro del contenedor
+# Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Instalamos dependencias del sistema necesarias si fuera requerido
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+# Instalar las dependencias del sistema necesarias
+RUN apt-get update && apt-get install -y --no-install-recommends gcc && rm -rf /var/lib/apt/lists/*
 
-# Copiamos e instalamos los requerimientos
+# Copiar e instalar las dependencias de Python
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiamos el resto del código del proyecto en el contenedor
+# Copiar el código del proyecto al contenedor
 COPY . .
 
-# Exponemos el puerto en el que corre Uvicorn
+# Exponer el puerto en el que corre FastAPI
 EXPOSE 8000
 
-# Comando por defecto para iniciar la API en producción/desarrollo
+# Comando para ejecutar la aplicación con Uvicorn
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
