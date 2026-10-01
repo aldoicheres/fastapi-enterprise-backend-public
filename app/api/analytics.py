@@ -27,7 +27,7 @@ def obtener_metricas_usuarios(db: Session = Depends(get_db)):
         "modulo": "Business Intelligence & Analytics",
         "metricas": {
             "total_registros": total_usuarios,
-            "edad_promedio_usuarios": round(edad_promedio, 2),
+            "edad_promedio_usuarios": edad_promedio,
             "sistema_operativo": "FastAPI Enterprise Core"
         }
     }
